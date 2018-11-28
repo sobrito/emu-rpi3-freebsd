@@ -16,7 +16,7 @@ RUN wget http://releases.linaro.org/components/kernel/uefi-linaro/16.02/release/
 
 COPY ./tools/start-packages.sh /usr/local/bin/start-packages
 RUN chmod +x  /usr/local/bin/start-packages \
-    dos2unix /usr/local/bin/start-packages
+    && dos2unix /usr/local/bin/start-packages
 
 RUN useradd -ms /bin/bash repo && echo "repo:${REPO_PASSWD}" | chpasswd
 RUN echo "repo ALL=(ALL:ALL) ALL" >> /etc/sudoers
