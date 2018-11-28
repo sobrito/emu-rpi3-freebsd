@@ -1,0 +1,15 @@
+version: "2"
+services:
+ freebsd-aarch64:
+   build:
+      context: .
+   image: "i9corp/freebsd-aarch64:latest"
+   ports:
+     - "60022:22"
+     - "60023:23"
+   volumes:
+     - "vol:/workspace"
+   environment:
+     - "REPO_PASSWD=q1w2e3"
+volumes:
+  vol:
